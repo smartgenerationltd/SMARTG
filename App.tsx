@@ -333,7 +333,8 @@ const App: React.FC = () => {
               const url = `https://www.google.com/maps/dir/?api=1&origin=${latitude},${longitude}&destination=${dest.lat},${dest.lng}`;
               window.open(url, '_blank', 'noopener,noreferrer');
           },
-          () => {
+          (error) => {
+              console.error(`Geolocation error: ${error.message} (Code: ${error.code})`);
               setError(t('locationError'));
           }
       );
@@ -349,17 +350,26 @@ const App: React.FC = () => {
           return;
       }
 
+      const successHandler = (position: GeolocationPosition) => {
+          onSuccess(position.coords);
+      };
+
+      const errorHandler = (err: GeolocationPositionError) => {
+           console.warn(`High accuracy geolocation failed: ${err.message} (Code: ${err.code}). Retrying with low accuracy...`);
+           // Fallback to low accuracy
+           navigator.geolocation.getCurrentPosition(
+              successHandler,
+              (finalErr) => {
+                  console.error(`Geolocation failed: ${finalErr.message} (Code: ${finalErr.code})`);
+                  onError(finalErr);
+              },
+              { enableHighAccuracy: false, timeout: 20000, maximumAge: 0 }
+           );
+      };
+
       navigator.geolocation.getCurrentPosition(
-          (position) => onSuccess(position.coords),
-          (error) => {
-              console.warn("High accuracy geolocation failed:", error.message);
-              // Fallback to low accuracy
-              navigator.geolocation.getCurrentPosition(
-                  (position) => onSuccess(position.coords),
-                  onError,
-                  { enableHighAccuracy: false, timeout: 15000, maximumAge: 0 }
-              );
-          },
+          successHandler,
+          errorHandler,
           { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
       );
   }, []);
@@ -371,7 +381,8 @@ const App: React.FC = () => {
              setUserLocation({ lat: coords.latitude, lng: coords.longitude });
         },
         (error) => {
-             console.error("Geolocation error:", error);
+             // Log stringified error to prevent [object Object] output if console logs weirdly
+             console.error(`Geolocation error: ${error.message} (Code: ${error.code})`);
              setError(t('locationError'));
         }
     );
@@ -389,7 +400,7 @@ const App: React.FC = () => {
             handleSendMessage(promptText, hiddenPrompt);
         },
         (error) => {
-            console.error("Geolocation error:", error);
+            console.error(`Geolocation error: ${error.message} (Code: ${error.code})`);
             setIsLoading(false);
             setError(t('locationError'));
             const promptText = t('findNearby').replace('📍 ', '');

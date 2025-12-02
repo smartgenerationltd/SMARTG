@@ -76,13 +76,11 @@ const MapComponent: React.FC<MapComponentProps> = ({
         marker.addTo(mapRef.current);
         userMarkerRef.current = marker;
         
-        // If it's the first time finding location or no other destinations, fly to user
-        if (destinations.length === 0) {
-            mapRef.current.flyTo([userLocation.lat, userLocation.lng], 13);
-        }
+        // Always fly to user location when it updates, ensuring the "Locate Me" button works as expected
+        mapRef.current.flyTo([userLocation.lat, userLocation.lng], 13);
       }
     }
-  }, [userLocation, destinations.length]);
+  }, [userLocation]);
 
   // Handle destination changes
   useEffect(() => {
@@ -142,7 +140,7 @@ const MapComponent: React.FC<MapComponentProps> = ({
       {/* Locate Me Button */}
       <button
         onClick={onRequestLocate}
-        className="absolute top-4 right-4 z-[1000] bg-white dark:bg-gray-800 p-2 rounded-md shadow-md border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+        className="absolute top-4 right-4 z-[5000] bg-white dark:bg-gray-800 p-2 rounded-md shadow-md border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
         title="Show my location"
       >
         <CrosshairIcon className={`h-6 w-6 ${userLocation ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-300'}`} />
