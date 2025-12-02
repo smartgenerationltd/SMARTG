@@ -39,6 +39,7 @@ const UI_TEXT: Record<string, Record<string, string>> = {
   welcomeTitle: { en: "Welcome to your Rwanda Travel Buddy!", fr: "Bienvenue chez votre Copain de Voyage au Rwanda!", rw: "Ikaze ku Nshuti y'Urugendo yawe mu Rwanda!", sw: "Karibu kwa Rafiki yako wa Kusafiri Rwanda!", es: "¡Bienvenido a tu Compañero de Viaje de Ruanda!", de: "Willkommen bei deinem Ruanda Reise-Kumpel!", zh: "欢迎使用您的卢旺达旅行伙伴！", hi: "आपके रवांडा यात्रा बडी में आपका स्वागत है!", ar: "أهلاً بك في رفيق سفرك في رواندا!", pt: "Bem-vindo ao seu Amigo de Viagem para Ruanda!", ja: "あなたのルワンダ旅行の相棒へようこそ！", ru: "Добро пожаловать в ваш Помощник в путешествии по Руанде!" },
   welcomeSubtitle: { en: "I can help you plan your trip. Ask me anything about Rwanda!", fr: "Je peux vous aider à planifier votre voyage. Demandez-moi n'importe quoi sur le Rwanda!", rw: "Nshobora kugufasha gutegura urugendo rwawe. Mbaza ikibazo cyose ushaka kumenya ku Rwanda!", sw: "Ninaweza kukusaidia kupanga safari yako. Niulize chochote kuhusu Rwanda!", es: "Puedo ayudarte a planificar tu viaje. ¡Pregúntame cualquier cosa sobre Ruanda!", de: "Ich kann dir bei der Planung deiner Reise helfen. Frag mich alles über Ruanda!", zh: "我可以帮你规划行程。关于卢旺达的任何事情都可以问我！", hi: "मैं आपकी यात्रा की योजना बनाने में मदद कर सकता हूँ। रवांडा के बारे में मुझसे कुछ भी पूछें!", ar: "يمكنني مساعدتك في التخطيط لرحلتك. اسألني أي شيء عن رواندا!", pt: "Posso ajudar a planejar sua viagem. Pergunte-me qualquer coisa sobre Ruanda!", ja: "あなたの旅行の計画をお手伝いします。ルワンダについて何でも聞いてください！", ru: "Я могу помочь вам спланировать поездку. Спрашивайте меня о чем угодно в Руанде!" },
   promptHeader: { en: "Quick Reach", fr: "Accès Rapide", rw: "Kugera Vuba", sw: "Ufikiaji wa Haraka", es: "Acceso Rápido", de: "Schnellzugriff", zh: "快速访问", hi: "त्वरित पहुँच", ar: "وصول سريع", pt: "Acesso Rápido", ja: "クイックアクセス", ru: "Быстрый доступ" },
+  findNearby: { en: "📍 Find Places Near Me", fr: "📍 Trouver des lieux à proximité", rw: "📍 Shakisha ahantu hano hafi", sw: "📍 Tafuta Maeneo Karibu Nami", es: "📍 Buscar lugares cercanos", de: "📍 Orte in der Nähe finden", zh: "📍 查找我附近的地方", hi: "📍 मेरे पास के स्थान खोजें", ar: "📍 ابحث عن أماكن بالقرب مني", pt: "📍 Encontrar lugares próximos", ja: "📍 近くの場所を探す", ru: "📍 Найти места рядом" },
   prompt1: { en: "Tell me about Rwanda's national parks.", fr: "Parlez-moi des parcs nationaux du Rwanda.", rw: "Mbwira ibya za pariki z'igihugu z'u Rwanda.", sw: "Niambie kuhusu mbuga za kitaifa za Rwanda.", es: "Háblame de los parques nacionales de Ruanda.", de: "Erzählen Sie mir von Ruandas Nationalparks.", zh: "告诉我关于卢旺达国家公园的信息。", hi: "मुझे रवांडा के राष्ट्रीय उद्यानों के बारे में बताएं।", ar: "أخبرني عن المتنزهات الوطنية في رواندا.", pt: "Fale-me sobre os parques nacionais de Ruanda.", ja: "ルワンダの国立公園について教えてください。", ru: "Расскажите мне о национальных парках Руанды." },
   prompt2: { en: "Where is the Kigali Genocide Memorial?", fr: "Où se trouve le Mémorial du génocide de Kigali ?", rw: "Urwibutso rwa Jenoside rwa Kigali ruri he?", sw: "Kumbukumbu ya Mauaji ya Kimbari ya Kigali iko wapi?", es: "¿Dónde está el Memorial del Genocidio de Kigali?", de: "Wo ist das Kigali Genocide Memorial?", zh: "基加利种族灭绝纪念馆在哪里？", hi: "किगाली नरसंहार स्मारक कहाँ है?", ar: "أين يقع نصب كيغالي التذكاري للإبادة الجماعية؟", pt: "Onde fica o Memorial do Genocídio de Kigali?", ja: "キガリ虐殺記念館はどこにありますか？", ru: "Где находится Мемориал геноцида в Кигали?" },
   prompt3: { en: "What are the top 5 things to do in Kigali?", fr: "Quelles sont les 5 meilleures choses à faire à Kigali ?", rw: "Ni ibihe bintu 5 by'ingenzi byo gukorera i Kigali?", sw: "Mambo 5 bora ya kufanya Kigali ni yapi?", es: "¿Cuáles son las 5 mejores cosas que hacer en Kigali?", de: "Was sind die Top 5 Aktivitäten in Kigali?", zh: "在基加利最值得做的5件事是什么？", hi: "किगाली में करने के लिए शीर्ष 5 चीजें क्या हैं?", ar: "ما هي أفضل 5 أشياء يمكن القيام بها في كيغالي؟", pt: "Quais são as 5 melhores coisas para fazer em Kigali?", ja: "キガリでやるべきことトップ5は何ですか？", ru: "Чем заняться в Кигали: топ-5?" },
@@ -64,6 +65,8 @@ const UI_TEXT: Record<string, Record<string, string>> = {
   getDirections: { en: "Get Directions", fr: "Obtenir l'itinéraire", rw: "Shaka Inzira", sw: "Pata Maelekezo", es: "Obtener Direcciones", de: "Route berechnen", zh: "获取路线", hi: "दिशा - निर्देश प्राप्त करें", ar: "احصل على الاتجاهات", pt: "Obter Direções", ja: "経路を取得", ru: "Проложить маршрут" },
   prevDestination: { en: "Previous destination", fr: "Destination précédente", rw: "Aho uheruka", sw: "Unakoenda awali", es: "Destino anterior", de: "Vorheriges Ziel", zh: "上一个目的地", hi: "पिछला गंतव्य", ar: "الوجهة السابقة", pt: "Destino anterior", ja: "前の目的地", ru: "Предыдущий пункт" },
   nextDestination: { en: "Next destination", fr: "Destination suivante", rw: "Aho utaha", sw: "Unakoenda ijayo", es: "Próximo destino", de: "Nächstes Ziel", zh: "下一个目的地", hi: "अगला गंतव्य", ar: "الوجهة التالية", pt: "Próximo destino", ja: "次の目的地", ru: "Следующий пункт" },
+  locating: { en: "Locating you...", fr: "Localisation en cours...", rw: "Turashakisha aho uherereye...", sw: "Tunakutafuta...", es: "Ubicándote...", de: "Standort wird ermittelt...", zh: "定位中...", hi: "आपको ढूंढा जा रहा है...", ar: "تحديد موقعك...", pt: "Localizando você...", ja: "位置情報を取得中...", ru: "Определение местоположения..." },
+  locationError: { en: "Could not find your location.", fr: "Impossible de trouver votre emplacement.", rw: "Ntibishobotse kubona aho uherereye.", sw: "Haikuweza kupata eneo lako.", es: "No se pudo encontrar tu ubicación.", de: "Standort konnte nicht gefunden werden.", zh: "无法找到您的位置。", hi: "आपका स्थान नहीं मिल सका।", ar: "تعذر العثور على موقعك.", pt: "Não foi possível encontrar sua localização.", ja: "現在地が見つかりませんでした。", ru: "Не удалось найти ваше местоположение." },
 };
 
 type Provider = 'google' | 'facebook' | 'apple' | 'linkedin' | 'instagram' | 'x' | 'email';
@@ -80,6 +83,7 @@ const App: React.FC = () => {
   const [credits, setCredits] = useState(0);
   const [isPremium, setIsPremium] = useState(false);
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+  const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
   const langCode = LANGUAGES.find(l => l.name === language)?.code || 'en';
@@ -228,7 +232,7 @@ const App: React.FC = () => {
     }
   }, [chat, appendToLastMessage]);
 
-  const handleSendMessage = useCallback(async (prompt: string) => {
+  const handleSendMessage = useCallback(async (prompt: string, hiddenPrompt?: string) => {
     if (!isPremium && credits <= 0) {
         setIsPaymentModalOpen(true);
         return;
@@ -244,11 +248,14 @@ const App: React.FC = () => {
     setIsLoading(true);
     setError(null);
 
+    // If hiddenPrompt is provided, it's sent to the AI, but the user sees 'prompt'
+    const actualPrompt = hiddenPrompt || prompt;
+
     const userMessage: Message = { role: 'user', content: prompt };
     setMessages(prev => [...prev, userMessage, { role: 'model', content: '' }]);
 
     try {
-      const stream = await chat.sendMessageStream({ message: prompt });
+      const stream = await chat.sendMessageStream({ message: actualPrompt });
 
       let fullResponse = '';
       let contentBuffer = '';
@@ -284,7 +291,7 @@ const App: React.FC = () => {
       }
       
       if (newDestinations.length === 0) {
-          const lowerCasePrompt = prompt.toLowerCase();
+          const lowerCasePrompt = actualPrompt.toLowerCase();
           const lowerCaseResponse = fullResponse.toLowerCase();
           const isHuyeQuery = lowerCasePrompt.includes('huye') || lowerCasePrompt.includes('butare') || lowerCaseResponse.includes('huye') || lowerCaseResponse.includes('butare');
           const isVolcanoesQuery = lowerCasePrompt.includes('volcanoes') || lowerCasePrompt.includes('virunga') || lowerCaseResponse.includes('volcanoes') || lowerCaseResponse.includes('virunga');
@@ -316,7 +323,7 @@ const App: React.FC = () => {
   
   const handleGetDirections = useCallback((dest: Destination) => {
       if (!navigator.geolocation) {
-          setError("Geolocation is not supported by your browser.");
+          setError(t('locationError'));
           return;
       }
 
@@ -327,13 +334,76 @@ const App: React.FC = () => {
               window.open(url, '_blank', 'noopener,noreferrer');
           },
           () => {
-              setError("Unable to retrieve your location. Please enable location services in your browser settings.");
+              setError(t('locationError'));
           }
+      );
+  }, [t]);
+
+  // Robust geolocation helper
+  const getGeolocation = useCallback((
+      onSuccess: (coords: { latitude: number; longitude: number }) => void,
+      onError: (error: GeolocationPositionError) => void
+  ) => {
+      if (!navigator.geolocation) {
+          onError({ code: 0, message: "Geolocation not supported", PERMISSION_DENIED: 1, POSITION_UNAVAILABLE: 2, TIMEOUT: 3 } as any);
+          return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+          (position) => onSuccess(position.coords),
+          (error) => {
+              console.warn("High accuracy geolocation failed:", error.message);
+              // Fallback to low accuracy
+              navigator.geolocation.getCurrentPosition(
+                  (position) => onSuccess(position.coords),
+                  onError,
+                  { enableHighAccuracy: false, timeout: 15000, maximumAge: 0 }
+              );
+          },
+          { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
       );
   }, []);
 
-  const handlePromptClick = (prompt: string) => {
-    handleSendMessage(prompt);
+  const handleRequestLocate = useCallback(() => {
+    setError(null);
+    getGeolocation(
+        (coords) => {
+             setUserLocation({ lat: coords.latitude, lng: coords.longitude });
+        },
+        (error) => {
+             console.error("Geolocation error:", error);
+             setError(t('locationError'));
+        }
+    );
+  }, [t, getGeolocation]);
+
+  const handleFindNearby = useCallback(() => {
+    setIsLoading(true);
+    getGeolocation(
+        (coords) => {
+            const { latitude, longitude } = coords;
+            setUserLocation({ lat: latitude, lng: longitude });
+            setIsLoading(false);
+            const promptText = t('findNearby').replace('📍 ', '');
+            const hiddenPrompt = `I am currently at latitude ${latitude} and longitude ${longitude}. What are the best places to visit nearby? Please provide a list of interesting spots, restaurants, or landmarks within a reasonable distance. You MUST use the [MAP:latitude,longitude,Place Name] format for each recommendation.`;
+            handleSendMessage(promptText, hiddenPrompt);
+        },
+        (error) => {
+            console.error("Geolocation error:", error);
+            setIsLoading(false);
+            setError(t('locationError'));
+            const promptText = t('findNearby').replace('📍 ', '');
+            handleSendMessage(promptText, "I want to find places near me, but I couldn't provide my GPS location. Can you tell me generally about popular places in Rwanda?");
+        }
+    );
+  }, [handleSendMessage, t, getGeolocation]);
+
+  const handlePromptClick = (prompt: string, isFindNearby = false) => {
+    if (isFindNearby) {
+        handleFindNearby();
+    } else {
+        handleSendMessage(prompt);
+    }
   };
 
   const handleNewChat = () => {
@@ -362,6 +432,7 @@ const App: React.FC = () => {
   const isInputDisabled = isLoading || (!isPremium && credits <= 0);
 
   const examplePrompts = [
+    t('findNearby'),
     t('prompt1'),
     t('prompt2'),
     t('prompt3'),
@@ -374,16 +445,21 @@ const App: React.FC = () => {
   
   const getPromptButtonClassName = (index: number) => {
     const baseClasses = "w-full p-3 rounded-lg text-left text-sm font-bold italic text-sky-900 dark:text-sky-100 hover:text-sky-950 dark:hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500";
-    if (index < 3) { // First 3 prompts
+    
+    // Check if it's the "Find Nearby" prompt (index 0)
+    if (index === 0) {
+         return `${baseClasses} bg-green-500 hover:bg-green-600 text-white dark:text-white dark:hover:bg-green-700 shadow-md`;
+    }
+
+    if (index < 4) { // Next 3 prompts
       return `${baseClasses} bg-blue-300 dark:bg-blue-900 hover:bg-blue-400 dark:hover:bg-blue-800`;
     }
-    if (index >= 3 && index <= 4) { // 4th and 5th prompts
+    if (index >= 4 && index <= 5) { // Next 2
       return `${baseClasses} bg-yellow-300 dark:bg-yellow-900 hover:bg-yellow-400 dark:hover:bg-yellow-800`;
     }
-    if (index >= 5 && index <= 7) { // 6th, 7th, 8th prompts
+    if (index >= 6 && index <= 8) { // Next 3
       return `${baseClasses} bg-green-300 dark:bg-green-900 hover:bg-green-400 dark:hover:bg-green-800`;
     }
-    // Default for any other prompts if the list grows
     return `${baseClasses} bg-white/20 dark:bg-sky-800/40 hover:bg-white/40 dark:hover:bg-sky-700/60`;
   };
 
@@ -502,7 +578,7 @@ const App: React.FC = () => {
                 {examplePrompts.map((prompt, index) => (
                     <button
                         key={index}
-                        onClick={() => handlePromptClick(prompt)}
+                        onClick={() => handlePromptClick(prompt, index === 0)}
                         className={getPromptButtonClassName(index)}
                     >
                         {prompt}
@@ -516,6 +592,8 @@ const App: React.FC = () => {
                 <MapComponent
                     destinations={destinations}
                     onGetDirections={handleGetDirections}
+                    onRequestLocate={handleRequestLocate}
+                    userLocation={userLocation}
                     getDirectionsText={t('getDirections')}
                 />
             </div>
