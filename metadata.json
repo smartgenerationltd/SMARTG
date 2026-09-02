@@ -1,8 +1,12 @@
 {
-  "name": "Rwanda Travel Buddy",
-  "description": "An AI-powered travel assistant to help tourists explore the beauty and culture of Rwanda, providing helpful tips, recommendations, and answers to common travel questions.",
+  "name": "Rwanda AI Travel Concierge",
+  "description": "Discover Rwanda through an AI that speaks your language. Premium AI travel assistant, real-time voice concierge, intelligent trip planning, interactive maps, and cultural guide.",
   "requestFramePermissions": [
-    "geolocation"
+    "geolocation",
+    "microphone"
   ],
-  "prompt": ""
+  "prompt": "",
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
